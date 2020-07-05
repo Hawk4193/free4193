@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Hawk's World!</title>
+
+    <style>
+        html{
+            background-color: rgb(23, 23, 94);
+        }
+        body {
+            
+
+        }
+        .container2{
+            width: 100%;
+            background-color: rgb(23, 23, 94);
+            margin:auto ;
+        }
+        .container2 h1{
+            background-color: rgb(23, 23, 94);
+            color: #f0d121;
+            font-size: 4rem;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .aaa{
+            width: 100%;
+
+        }
+        .maincon {
+            background-color: rgb(23, 23, 94);
+        }
+
+        .myinfo {
+
+            height: 50px;
+
+        }
+
+        .pic {
+            width: 100%;
+            padding-bottom: 100%;
+            background-position: center center;
+            background-size: cover;
+            border: 2px solid #f0d121;
+            position: relative;
+        }
+
+        #info-card {
+            display: inline;
+
+        }
+
+        .col-12 {
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        .col-3 {
+            padding: 0;
+            margin-top: -10px;
+            box-sizing: border-box;
+
+
+        }
+
+     .pic h1 {
+            background-color: black;
+            color: #f0d121;
+            margin-bottom: 0;
+            font-size: 3rem;
+            text-decoration: none;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+
+
+        }
+
+    
+        a{
+            text-decoration: none;
+        }
+       .pic h1:hover {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container2 ">
+        <div class="aaa no-gutters">
+            <h1>HAWK'S WORLD</h1>
+            <div class="myinfo col-6" style="background-image: url('');"></div>
+            
+
+        </div>
+    </div>
+    <div class="maincon">
+
+
+        <div class="col-12" id="col-12">
+
+
+        </div>
+
+
+    </div>
+
+
+    <template id="CARD">
+
+        <a href="" class="col-md-3 col-12">
+            <div class="pic w-100">
+                <h1></h1>
+            </div>
+
+        </a>
+
+    </template>
+
+    <script>
+        var myinformation = document.getElementById('col-12');
+        let CARD = document.getElementById('CARD');
+        var myinfo = [{
+                url: "/310/schooltable.html",
+                pic: "310/table.jpg",
+                homeworkname: "課表"
+            },
+            {
+                url: "/310/313hw.html",
+                pic: "310/3-13pic/asset 62 (15).jpg",
+                homeworkname: "Fresh Food"
+            },
+            {
+                url: "/310/317.html",
+                pic: "310/manufax/asset 1.png",
+                homeworkname: "MANUFAX"
+            },
+            {
+                url: "/310/toyata02.html",
+                pic: "310/toyota/asset 57.png",
+                homeworkname: "Fake TOYOTA"
+            },
+            {
+                url: "/310/320hw.html",
+                pic: "310/3-20hw/greeting_image.jpg",
+                homeworkname: "ART"
+            },
+            {
+                url: "/310/apple.html",
+                pic: "310/apple/iphone-11-og-201909.jpg",
+                homeworkname: "Fake APPLE"
+            },
+            {
+                url: "/310/EX-CODE.html",
+                pic: "310/mainpic/ex-code.jpg",
+                homeworkname: "EX-CODE"
+            },
+            {
+                url: "/310/guess_number.html",
+                pic: "310/mainpic/guess.jpg",
+                homeworkname: "Guess Number"
+            },
+
+            {
+                url: "/310/Taiwan_Addres.html",
+                pic: "310/mainpic/schoolmap.jpg",
+                homeworkname: "Taiwan Addres"
+            },
+            {
+
+                url: "/310/ipad_table 2.html",
+                pic: "310/mainpic/ipad_gold.png",
+                homeworkname: "iPad Table"
+            },
+            {
+
+                url: "/310/GUNPLA.html",
+                pic: "310/mainpic/zaku.jpg",
+                homeworkname: "GUNPLA"
+            },
+            {
+
+                url: "/310/mask_map.html",
+                pic: "310/mainpic/map.jpg",
+                homeworkname: "Mask Map"
+            },
+            {
+
+                url: "/310/pokemon-remove.html",
+                pic: "310/mainpic/pokemon.jpg",
+                homeworkname: "Pokemon"
+            },
+            {
+
+                url: "/310/LINE_basic copy.html",
+                pic: "310/mainpic/line.jpg",
+                homeworkname: "Chart Line"
+            },
+            {
+
+                url: "/310/hakerthon/N-puzzle2.html",
+                pic: "/310/gaga.jpg",
+                homeworkname: "N PUZZLE"
+            }
+        ]
+
+        var information = myinfo.reverse();
+        information.forEach(x => {
+
+            let cloneContent = CARD.content.cloneNode(true);
+            let bpic = cloneContent.querySelectorAll('div')[0];
+            let h1 = cloneContent.querySelectorAll('h1')[0];
+            let a = cloneContent.querySelectorAll('a')[0];
+            bpic.setAttribute('style', `background-image: url('${x.pic}')`);
+            h1.innerHTML = x.homeworkname;
+            a.href = x.url;
+            myinformation.appendChild(cloneContent);
+
+        })
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
